@@ -24,7 +24,7 @@ import com.amazonaws.encryptionsdk.kms.KmsMasterKeyProvider;
  */
 public class Application {
 
-    private final static String KEY_ARN = "arn:aws:kms:us-east-1:980729273837:key/97ee982d-e6de-4bb9-a22b-42541aeee279";
+    private final static String KEY_ARN = "";
 
     public static void main(String... args) {
         String plaintext = "testing the encryption";
