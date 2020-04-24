@@ -1,0 +1,5 @@
+com\dcarlidev\testspringbootwithrdsmysql\services\CityService.class
+com\dcarlidev\testspringbootwithrdsmysql\repositories\CityRepository.class
+com\dcarlidev\testspringbootwithrdsmysql\model\City.class
+com\dcarlidev\testspringbootwithrdsmysql\controller\CityController.class
+com\dcarlidev\testspringbootwithrdsmysql\Application.class

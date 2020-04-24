@@ -1,0 +1,64 @@
+version: 0.2
+
+env:
+  variables:
+    JAVA_HOME: "/usr/lib/jvm/java-1.8.0-amazon-corretto.x86_64"
+#  parameter-store:
+#    LOGIN_PASSWORD: /CodeBuild/dockerLoginPassword
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+#      - yum update -y
+      - yum install -y maven
+    finally:
+      - echo This always runs even if the update or install command fails...
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+#      - docker login –u User –p $LOGIN_PASSWORD
+    finally:
+      - echo This always runs even if the login command fails...
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - mvn install
+    finally:
+      - echo This always runs even if the install command fails...
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+#      - echo Build completed on `date`
+
+#reports:
+#  arn:aws:codebuild:your-region:your-aws-account-id:report-group/report-group-name-1:
+#    files:
+#      - "**/*"
+#    base-directory: 'target/tests/reports'
+#    discard-paths: no
+#  reportGroupCucumberJson:
+#    files:
+#      - 'cucumber/target/cucumber-tests.xml'
+#    discard-paths: yes
+#    file-format: CucumberJson # default is JunitXml
+artifacts:
+  files:
+    - target/TestSpringBootWithRDSMySQL-1.0-SNAPSHOT-spring-boot.jar
+    - appspec.yml
+    - scripts/start.sh
+    - scripts/stop.sh
+  discard-paths: yes
+#  secondary-artifacts:
+#    artifact1:
+#      files:
+#        - target/messageUtil-1.0.jar
+#      discard-paths: yes
+#    artifact2:
+#      files:
+#        - target/messageUtil-1.0.jar
+#      discard-paths: yes
+#cache:
+#  paths:
+#    - '/root/.m2/**/*'*

@@ -1,0 +1,14 @@
+## YAML Template.
+---
+version: 0.0
+os: linux
+files:
+  - source: /TestSpringBootWithRDSMySQL-1.0-SNAPSHOT-spring-boot.jar
+    destination: /tmp
+hooks:
+  ApplicationStart:
+    - location: start.sh
+      runas: root
+  ApplicationStop:
+    - location: stop.sh
+      runas: root
