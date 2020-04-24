@@ -1,1 +1,5 @@
 /TestEncryptionSDKwithKMS/target/
+/TestSMParameterStore/target/
+/TestSpringBootWithRDSAndCodeBuildCodeDeploy/target/
+/TestSQSPollingLambda/target/
+/TestSTSWithCredentials/target/
