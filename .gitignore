@@ -3,3 +3,4 @@
 /TestSpringBootWithRDSAndCodeBuildCodeDeploy/target/
 /TestSQSPollingLambda/target/
 /TestSTSWithCredentials/target/
+/TestCognitoWithFederation/target/
