@@ -17,8 +17,10 @@ public class Application {
 
     public static void main(String... args) {
         SsmClient client = SsmClient.create();
-        GetParametersByPathResponse response = client.getParametersByPath(GetParametersByPathRequest.builder().path("/dev/").withDecryption(true).recursive(true).build());
-        response.parameters().forEach(param -> System.out.println("Parameter: " + param.value()));
+        GetParametersByPathResponse response = client.getParametersByPath(GetParametersByPathRequest.builder().path("/prod/").withDecryption(true).recursive(true).build());
+        response.parameters().forEach(param -> {
+            System.out.println(param.name() + ": " + param.value());
+        });
     }
 
 }
